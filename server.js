@@ -1,17 +1,19 @@
 // set up ======================================================================
 var express  = require('express');
-var app      = express(); 								// create our app w/ express
-var mongoose = require('mongoose'); 					// mongoose for mongodb
-var port  	 = process.env.PORT || 8080; 				// set the port
-var database = require('./config/database'); 			// load the database config
+var app      = express();                         // create our app w/ express
+var mongoose = require('mongoose');               // mongoose for mongodb
+var port     = process.env.PORT || 9012;          // set the port
+var database = require('./config/database');      // load the database config
 var morgan   = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+var orders = require('./app/lib/orders');
+
 // configuration ===============================================================
 mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
 
-app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
+app.use(express.static(__dirname + '/public'));   // set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'})); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json
@@ -25,3 +27,10 @@ require('./app/routes.js')(app);
 // listen (start app with node server.js) ======================================
 app.listen(port);
 console.log("App listening on port " + port);
+
+
+// Test the class:
+move = new orders.Move('matt', 'Canada', 'US');
+console.log("" + move);
+
+// vim: sw=3 ts=3 noet sts=3 :

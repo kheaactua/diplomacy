@@ -33,19 +33,17 @@
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
-			<h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
+			<h1>Diplomacy 1814'ish!</h1>
 		</div>
 
-		<!-- TODO LIST -->
-		<div id="todo-list" class="row">
+		<!-- order LIST -->
+		<div id="order-list" class="row">
 			<div class="col-sm-4 col-sm-offset-4">
 
-				
-
-				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-				<div class="checkbox" ng-repeat="todo in todos">
+				<!-- LOOP OVER THE orderS IN $scope.orders -->
+				<div class="checkbox" ng-repeat="order in orders">
 					<label>
-						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+						<input type="checkbox" ng-click="deleteorder(order._id)"> {{ order.text }}
 					</label>
 				</div>
 
@@ -56,8 +54,8 @@
 			</div>
 		</div>
 
-		<!-- FORM TO CREATE TODOS -->
-		<div id="todo-form" class="row">
+		<!-- FORM TO CREATE orderS -->
+		<div id="order-form" class="row">
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
 					<div class="form-group">
@@ -66,8 +64,8 @@
 						<input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
 					</div>
 
-					<!-- createToDo() WILL CREATE NEW TODOS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+					<!-- createorder() WILL CREATE NEW orderS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createorder()">Add</button>
 				</form>
 			</div>
 		</div>
@@ -81,3 +79,6 @@
 
 </body>
 </html>
+
+<!-- vim: sw=3 ts=3 noet sts=3 :
+-->

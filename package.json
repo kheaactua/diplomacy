@@ -1,7 +1,7 @@
 {
-  "name"         : "node-todo",
-  "version"      : "0.0.0",
-  "description"  : "Simple todo application.",
+  "name"         : "Diplomacy",
+  "version"      : "0.0.1",
+  "description"  : "General Diplomacy Game.",
   "main"         : "server.js",
   "author"       : "Scotch",
   "dependencies" : {
